@@ -29,7 +29,6 @@ function SelectSkip({
         `https://clicks.aweber.com/y/ct/?l=IBPEO1&m=99WSJGayKN5jSBlr&b=WFB7MbvY7r7soU6CpbOHmQ`
       );
 
-      console.log(response.data);
       setSkips(response.data);
     } catch (err) {
       console.error("Error loading data:", err);
