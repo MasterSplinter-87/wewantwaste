@@ -9,6 +9,7 @@ function SelectSkip({
   onBack,
   onContinue,
   address,
+  onSelectStepBtn,
   hasHeavyWaste = false,
 }) {
   const [skips, setSkips] = useState([]);
@@ -46,7 +47,7 @@ function SelectSkip({
 
   return (
     <>
-      {<StepNavigation currentStep={2} />}
+      {<StepNavigation currentStep={2} onSelectStepBtn={onSelectStepBtn} />}
       <Fragment>
         <div className="max-w-7xl mx-auto px-4 pb-32">
           <h2 className="text-2xl text-[#333] text-center mb-4">
@@ -96,7 +97,7 @@ function SelectSkip({
                     onClick={() => handleSelect(skip)}
                   >
                     <div className="relative">
-                      <div class="absolute top-3 right-2 z-20 bg-[#c07] text-white px-3 py-1 rounded-full text-sm font-medium shadow-md">
+                      <div className="absolute top-3 right-2 z-20 bg-[#c07] text-white px-3 py-1 rounded-full text-sm font-medium shadow-md">
                         {skip.size + " Yards"}
                       </div>
                       <img
@@ -166,7 +167,7 @@ function SelectSkip({
                           stroke-width="2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
-                          class="lucide lucide-arrow-right w-4 h-4"
+                          className="lucide lucide-arrow-right w-4 h-4"
                         >
                           <path d="M5 12h14"></path>
                           <path d="m12 5 7 7-7 7"></path>
@@ -183,11 +184,11 @@ function SelectSkip({
       <div className="fixed bottom-0 left-0 right-0 bg-[#c07] border-t border-[#2A2A2A] p-4 animate-slideUp z-50">
         <div className="max-w-7xl mx-auto">
           <div className="lg:hidden">
-            <div class="grid grid-cols-2 gap-3">
-              <button onClick={onBack} class="btn-secondary w-full">
+            <div className="grid grid-cols-2 gap-3">
+              <button onClick={onBack} className="btn-secondary w-full">
                 Back
               </button>
-              <button onClick={onContinue} class="btn-primary w-full">
+              <button onClick={onContinue} className="btn-primary w-full">
                 Continue
               </button>
             </div>

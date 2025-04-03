@@ -2,7 +2,14 @@
 import React from "react";
 import StepIcon from "./stepIcon";
 
-function StepButton({ icon, label, active, completed, disabled }) {
+function StepButton({
+  icon,
+  label,
+  active,
+  completed,
+  disabled,
+  onSelectStepBtn,
+}) {
   const baseStyle =
     "step-button flex items-center justify-center whitespace-nowrap text-sm font-medium px-3 py-1 transition-colors text-center rounded-md duration-200 min-w-[100px] min-h-[80px] arrow-right";
   const activeStyle = "bg-[#fff] text-[#c07] shadow-md border border-pink-200";
@@ -11,6 +18,7 @@ function StepButton({ icon, label, active, completed, disabled }) {
 
   return (
     <button
+      onClick={onSelectStepBtn}
       disabled={disabled}
       className={`${baseStyle} ${
         active ? activeStyle : completed ? completedStyle : disabledStyle

@@ -18,6 +18,10 @@ function App() {
     //TODO: Handle On Back Logic in here
   };
 
+  const handleSelectStepBtn = () => {
+    //TODO: Handle Select Step Btn logic - redirect user to page
+  };
+
   return (
     <div className="App">
       <SelectSkip
@@ -26,6 +30,7 @@ function App() {
         selectedSkip={selectedSkip}
         onContinue={handleOnContinue}
         onBack={handleOnBack}
+        onSelectStepBtn={handleSelectStepBtn}
       />
     </div>
   );
