@@ -16,6 +16,7 @@ function SelectSkip({
   const [permit, setPermit] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selectedSkipItem, setSelectedSkipItem] = useState(null);
 
   useEffect(() => {
     fetchData();
@@ -41,6 +42,7 @@ function SelectSkip({
 
   const handleSelect = (selected) => {
     onSkipSelect(selected, permit || undefined);
+    setSelectedSkipItem(selected);
   };
 
   const filteredSkips = skips.filter((s) => !s.forbidden);
@@ -164,9 +166,9 @@ function SelectSkip({
                           viewBox="0 0 24 24"
                           fill="none"
                           stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
                           className="lucide lucide-arrow-right w-4 h-4"
                         >
                           <path d="M5 12h14"></path>
@@ -184,11 +186,18 @@ function SelectSkip({
       <div className="fixed bottom-0 left-0 right-0 bg-[#c07] border-t border-[#2A2A2A] p-4 animate-slideUp z-50">
         <div className="max-w-7xl mx-auto">
           <div>
-            <div className="grid grid-cols-2 gap-3">
-              <button onClick={onBack} className="btn-secondary w-full">
+            <div className="flex justify-between items-center">
+              <div className="text-white">
+                {selectedSkipItem && selectedSkipItem?.size}
+              </div>
+              <div className="text-white">
+                {selectedSkipItem &&
+                  "£" + selectedSkipItem?.hire_period_days + " day hire"}
+              </div>
+              <button onClick={onBack} className="btn-secondary mx-4 w-full">
                 Back
               </button>
-              <button onClick={onContinue} className="btn-primary w-full">
+              <button onClick={onContinue} className="btn-primary mx-4 w-full">
                 Continue
               </button>
             </div>
