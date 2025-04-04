@@ -87,7 +87,9 @@ function SelectSkip({
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {filteredSkips.map((skip) => {
                 const isSelected = selectedSkip?.id === skip.id;
-
+                const price =
+                  (skip.price_before_vat * skip.vat) / 100 +
+                  skip.price_before_vat;
                 return (
                   <div
                     key={skip.id}
@@ -135,9 +137,7 @@ function SelectSkip({
                     </p>
                     <div className="text-left">
                       <span className="text-3xl md:text-2xl text-[#333]">
-                        £
-                        {(skip.price_before_vat * skip.vat) / 100 +
-                          skip.price_before_vat}
+                        £{parseFloat(price.toFixed(2))}
                       </span>
                       <span
                         className="text-sm ml-2 font-bold text-[#c03]"
@@ -183,7 +183,7 @@ function SelectSkip({
       </Fragment>
       <div className="fixed bottom-0 left-0 right-0 bg-[#c07] border-t border-[#2A2A2A] p-4 animate-slideUp z-50">
         <div className="max-w-7xl mx-auto">
-          <div className="lg:hidden">
+          <div>
             <div className="grid grid-cols-2 gap-3">
               <button onClick={onBack} className="btn-secondary w-full">
                 Back
