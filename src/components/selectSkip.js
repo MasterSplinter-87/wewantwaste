@@ -10,6 +10,7 @@ function SelectSkip({
   onContinue,
   address,
   onSelectStepBtn,
+  selectedStep,
   hasHeavyWaste = false,
 }) {
   const [skips, setSkips] = useState([]);
@@ -49,7 +50,12 @@ function SelectSkip({
 
   return (
     <>
-      {<StepNavigation currentStep={2} onSelectStepBtn={onSelectStepBtn} />}
+      {
+        <StepNavigation
+          currentStep={selectedStep}
+          onSelectStepBtn={onSelectStepBtn}
+        />
+      }
       <Fragment>
         <div className="max-w-7xl mx-auto px-4 pb-32">
           <h2 className="text-2xl text-[#333] text-center mb-4">
