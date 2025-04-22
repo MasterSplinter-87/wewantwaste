@@ -964,17 +964,6 @@ video {
   position: relative;
 }
 
-.arrow-right:after {
-  position: absolute;
-  right: -6.24rem;
-  display: inline-block;
-  content: "";
-
-  width: 100px;
-  height: 10px;
-  background-color: #c07;
-}
-
 .arrow-right:last-child::after {
   display: none;
 }
@@ -1243,6 +1232,11 @@ video {
 .bg-\[\#0037C1\] {
   --tw-bg-opacity: 1;
   background-color: rgb(0 55 193 / var(--tw-bg-opacity));
+}
+
+.divider {
+  width: 30px;
+  height: 3px;
 }
 
 .bg-\[\#c07\] {
