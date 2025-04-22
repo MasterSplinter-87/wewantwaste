@@ -194,14 +194,16 @@ function SelectSkip({
       <div className="fixed bottom-0 left-0 right-0 bg-[#c07] border-t border-[#2A2A2A] p-4 animate-slideUp z-50">
         <div className="max-w-7xl mx-auto">
           <div>
-            <div className="flex justify-between items-center">
+            <div className="flex justify-center items-center mb-2">
               <div className="text-white">
-                {selectedSkipItem && selectedSkipItem?.size}
+                {selectedSkipItem && selectedSkipItem?.size} YARD SKIP
               </div>
-              <div className="text-white">
+              <div className="text-white ml-2">
                 {selectedSkipItem &&
-                  "£" + selectedSkipItem?.hire_period_days + " day hire"}
+                  "£" + selectedSkipItem?.hire_period_days + " DAY HIRE"}
               </div>
+            </div>
+            <div className="flex justify-between items-center">
               <button onClick={onBack} className="btn-secondary mx-4 w-full">
                 Back
               </button>
