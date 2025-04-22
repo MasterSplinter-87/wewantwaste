@@ -1,13 +1,20 @@
 import React from "react";
 import StepNavigation from "./generic/stepNavigation";
 
-const Payment = ({ onSelectStepBtn, selectedStep, onBack, onContinue }) => {
+const Payment = ({
+  onSelectStepBtn,
+  selectedStep,
+  onBack,
+  onContinue,
+  stepItems,
+}) => {
   return (
     <>
       {
         <StepNavigation
           currentStep={selectedStep}
           onSelectStepBtn={onSelectStepBtn}
+          steps={stepItems}
         />
       }
       <h1>Payment</h1>

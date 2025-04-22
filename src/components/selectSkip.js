@@ -11,6 +11,7 @@ function SelectSkip({
   address,
   onSelectStepBtn,
   selectedStep,
+  stepItems,
   hasHeavyWaste = false,
 }) {
   const [skips, setSkips] = useState([]);
@@ -54,6 +55,7 @@ function SelectSkip({
         <StepNavigation
           currentStep={selectedStep}
           onSelectStepBtn={onSelectStepBtn}
+          steps={stepItems}
         />
       }
       <Fragment>

@@ -1,13 +1,20 @@
 import React from "react";
 import StepNavigation from "./generic/stepNavigation";
 
-const WasteType = ({ onSelectStepBtn, selectedStep, onBack, onContinue }) => {
+const WasteType = ({
+  onSelectStepBtn,
+  selectedStep,
+  onBack,
+  onContinue,
+  stepItems,
+}) => {
   return (
     <>
       {
         <StepNavigation
           currentStep={selectedStep}
           onSelectStepBtn={onSelectStepBtn}
+          steps={stepItems}
         />
       }
       <h1>Waste Type</h1>

@@ -15,12 +15,12 @@ import Payment from "./components/payment";
 import "./App.css";
 
 const steps = [
-  { label: "Postcode", slug: "postcode" },
-  { label: "Waste Type", slug: "waste-type" },
-  { label: "Select Skip", slug: "select-skip" },
-  { label: "Permit Check", slug: "permit-check" },
-  { label: "Choose Date", slug: "choose-date" },
-  { label: "Payment", slug: "payment" },
+  { label: "Postcode", icon: "map-pin", slug: "postcode", index: 0 },
+  { label: "Waste Type", icon: "trash2", slug: "waste-type", index: 1 },
+  { label: "Select Skip", icon: "truck", slug: "select-skip", index: 2 },
+  { label: "Permit Check", icon: "shield", slug: "permit-check", index: 3 },
+  { label: "Choose Date", icon: "calendar", slug: "choose-date", index: 4 },
+  { label: "Payment", icon: "credit-card", slug: "payment", index: 5 },
 ];
 
 function App() {
@@ -72,6 +72,7 @@ function App() {
               onBack={handleOnBack}
               onSelectStepBtn={handleSelectStepBtn}
               selectedStep={currentStep}
+              stepItems={steps}
             />
           }
         />
@@ -84,6 +85,7 @@ function App() {
               onSelectStepBtn={handleSelectStepBtn}
               onContinue={handleOnContinue}
               onBack={handleOnBack}
+              stepItems={steps}
             />
           }
         />
@@ -95,6 +97,7 @@ function App() {
               onSelectStepBtn={handleSelectStepBtn}
               onBack={handleOnBack}
               onContinue={handleOnContinue}
+              stepItems={steps}
             />
           }
         />
@@ -106,6 +109,7 @@ function App() {
               onSelectStepBtn={handleSelectStepBtn}
               onContinue={handleOnContinue}
               onBack={handleOnBack}
+              stepItems={steps}
             />
           }
         />
@@ -117,6 +121,7 @@ function App() {
               onSelectStepBtn={handleSelectStepBtn}
               onContinue={handleOnContinue}
               onBack={handleOnBack}
+              stepItems={steps}
             />
           }
         />
@@ -128,6 +133,7 @@ function App() {
               onSelectStepBtn={handleSelectStepBtn}
               onContinue={handleOnContinue}
               onBack={handleOnBack}
+              stepItems={steps}
             />
           }
         />

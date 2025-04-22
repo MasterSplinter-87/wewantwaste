@@ -1,13 +1,20 @@
 import React from "react";
 import StepNavigation from "./generic/stepNavigation";
 
-const PermitCheck = ({ onSelectStepBtn, selectedStep, onBack, onContinue }) => {
+const PermitCheck = ({
+  onSelectStepBtn,
+  selectedStep,
+  onBack,
+  onContinue,
+  stepItems,
+}) => {
   return (
     <>
       {
         <StepNavigation
           currentStep={selectedStep}
           onSelectStepBtn={onSelectStepBtn}
+          steps={stepItems}
         />
       }
       <h1>PermitCheck</h1>

@@ -1,13 +1,20 @@
 import React from "react";
 import StepNavigation from "./generic/stepNavigation";
 
-const Postcode = ({ onSelectStepBtn, selectedStep, onBack, onContinue }) => {
+const Postcode = ({
+  onSelectStepBtn,
+  selectedStep,
+  onBack,
+  onContinue,
+  stepItems,
+}) => {
   return (
     <>
       {
         <StepNavigation
           currentStep={selectedStep}
           onSelectStepBtn={onSelectStepBtn}
+          steps={stepItems}
         />
       }
       <h1>Postcode</h1>
