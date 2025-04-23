@@ -194,7 +194,7 @@ function SelectSkip({
       <div className="fixed bottom-0 left-0 right-0 bg-[#c07] border-t border-[#2A2A2A] p-4 animate-slideUp z-50">
         <div className="max-w-7xl mx-auto">
           <div>
-            <div className="flex justify-center items-center mb-2">
+            <div className="flex justify-center items-center mb-3">
               <div className="text-white">
                 {selectedSkipItem && selectedSkipItem?.size} YARD SKIP
               </div>
